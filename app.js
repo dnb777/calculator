@@ -1,21 +1,17 @@
 "use strict"
 
+const buttons = document.querySelectorAll('.btn');
+const display = document.querySelector('#result');
+const prevDisplay = document.querySelector('#prev-result')
+const equal = document.querySelector('#equal');
+const del = document.querySelector('#del');
+const clear = document.querySelector('#clearBtn')
+const numbers = document.querySelectorAll('#num');
+const operators = document.querySelectorAll('#operator');
 
-// function sum(a, b) {
-// 	return a + b;
-// }
+let value = '';
+let op = '';
 
-// function subtract(a, b) {
-// 	return a - b;
-// }
-
-// function multiply(a, b) {
-// 	return a * b;
-// }
-
-// function divide(a, b) {
-// 	return a / b;
-// }
 const operations = {
 	"sum" : function(a, b) {
 		return a + b;
@@ -27,20 +23,41 @@ const operations = {
 		return a * b;
 	},
 	"divide" : function(a, b) {
-		return a / b;
+		return (a / b).toFixed(2);
 	},
 }
 
 
-function operate(n, n1) {
-	const op = prompt("enter operator", '')
-	if(!op){
-		console.log("ERROR: missing operator")
-	}
+function operate(str) {
+	const nums = str.split(op);
 
-	if(op == '+') return sum(n, n1);
-	if(op == '-') return subtract(n, n1);
-	if(op == '*') return multiply(n, n1);
-	if(op == '/') return divide(n, n1);
+	const a = Number(nums[0]);
+	const b = Number(nums[1]);
+
+
+	if(op == '+') return operations.sum(a, b);
+	if(op == '-') return operations.subtract(a, b);
+	if(op == 'x') return operations.multiply(a, b);
+	if(op == '÷') return operations.divide(a, b);
 }
 
+
+numbers.forEach(number => {
+	number.addEventListener('click', (e) => {
+		display.textContent += e.target.innerText;
+		value += e.target.innerText;
+	})
+})
+operators.forEach(operator => {
+	operator.addEventListener('click', (e) => {
+		op = e.target.innerText;
+		display.textContent = '';
+		value += e.target.innerText;
+		prevDisplay.textContent = value.split(',').join();
+	})
+})
+
+equal.addEventListener('click', () => {
+	prevDisplay.textContent = '';
+	display.textContent = operate(value);
+})
