@@ -2,10 +2,10 @@
 	--body: #EDEDED;
 	--calcBody: #262626; 
 	--calcScreen: #D0D0D0;
-	--calcBtn: #F6F6F6;
-	--lightBlue: #A7CCFF;
-	--lightGreen: #91E0BD;
-	--lightPurple: #D9D6FF;
+	--calcBtn: hsl(0, 0%, 93%);
+	--lightBlue: hsl(216, 100%, 83%);
+	--lightGreen: hsl(153, 56%, 72%);
+	--lightPurple: hsl(244, 100%, 86%);
 	--white: #FDFDFD;
 }
 
@@ -51,6 +51,7 @@ a {
 	justify-content: space-between;
 	align-items: center;
 }
+
 /*MAIN*/
 .main {
 	display: flex;
@@ -64,6 +65,7 @@ a {
 	margin-top: 20rem;
 	border-radius: 1rem;
 }
+
 /*CALC-DISPLAY*/
 .screen {
 	height: 10rem;
@@ -86,7 +88,8 @@ a {
 #prev-result {
 	font-size: 2.2rem;
 }
-/*Buttons-grid*/
+
+/*BUTTONS-GRID*/
 .buttons-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -107,7 +110,20 @@ a {
 .green {
 	background-color: var(--lightGreen);
 }
-
+/*hover*/
+.btn:hover {
+	background: var(--white);
+}
+.blue:hover {
+	background-color: hsl(216, 100%, 87%)
+}
+.green:hover {
+	background-color: hsl(153, 56%, 76%);
+}
+.purple:hover {
+	background-color: hsl(244, 100%, 90%);
+}
+/*FOOTER*/
 .footer {
 	width: 100%;
 	background: var(--calcBody);
