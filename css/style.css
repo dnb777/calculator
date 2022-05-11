@@ -48,20 +48,19 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-/*HEADER*/
-.header {
-	font-family: 'Special Elite', cursive;
+	align-items: center;
 }
 /*MAIN*/
 .main {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 /*CALCULATOR*/
 .calculator {
 	background-color: var(--calcBody);
 	padding: 2rem;
+	margin-top: 20rem;
 	border-radius: 1rem;
 }
 .screen {
