@@ -6,6 +6,7 @@
 	--lightBlue: #A7CCFF;
 	--lightGreen: #91E0BD;
 	--lightPurple: #D9D6FF;
+	--white: #FDFDFD;
 }
 
 html {
@@ -30,7 +31,7 @@ button {
 	width: 100%;
 }
 p {
-
+	color: var(--white);
 }
 h1 {
 	font-size: 4rem;
@@ -63,6 +64,7 @@ a {
 	margin-top: 20rem;
 	border-radius: 1rem;
 }
+/*CALC-DISPLAY*/
 .screen {
 	height: 10rem;
 	background-color: var(--calcScreen);
@@ -84,7 +86,6 @@ a {
 	border-radius: 2rem;
 	font-size: 2rem;
 }
-
 .blue {
 	background-color: var(--lightBlue);
 }
@@ -93,4 +94,19 @@ a {
 }
 .green {
 	background-color: var(--lightGreen);
+}
+
+.footer {
+	width: 100%;
+	background: var(--calcBody);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3rem;
+
+}
+.profile-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
