@@ -60,10 +60,19 @@ a {
 }
 /*CALCULATOR*/
 .calculator {
+	background-color: var(--calcBody);
+	padding: 2rem;
+	border-radius: 1rem;
 }
 .screen {
-
+	height: 10rem;
+	background-color: var(--calcScreen);
+	margin-bottom: 1rem;
+	border-radius: 5px;
+	display: grid;
+	grid-template-rows: 1fr 2fr;
 }
+
 /*Buttons-grid*/
 .buttons-grid {
 	display: grid;
