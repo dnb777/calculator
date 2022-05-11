@@ -73,7 +73,19 @@ a {
 	display: grid;
 	grid-template-rows: 1fr 2fr;
 }
-
+#result, #prev-result {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding-right: .5rem;
+	font-weight: 700;
+}
+#result {
+	font-size: 5rem;
+}
+#prev-result {
+	font-size: 2.2rem;
+}
 /*Buttons-grid*/
 .buttons-grid {
 	display: grid;
