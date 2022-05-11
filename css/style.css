@@ -1,0 +1,88 @@
+:root {
+	--body: #EDEDED;
+	--calcBody: #262626; 
+	--calcScreen: #D0D0D0;
+	--calcBtn: #F6F6F6;
+	--lightBlue: #A7CCFF;
+	--lightGreen: #91E0BD;
+	--lightPurple: #D9D6FF;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: sans-serif;
+}
+button {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.8rem;
+	width: 100%;
+}
+p {
+
+}
+h1 {
+	font-size: 4rem;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*CONTAINER*/
+.container {
+	height: 100vh;
+	background: var(--body);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+/*HEADER*/
+.header {
+	font-family: 'Special Elite', cursive;
+}
+/*MAIN*/
+.main {
+	display: flex;
+	justify-content: center;
+}
+/*CALCULATOR*/
+.calculator {
+}
+.screen {
+
+}
+/*Buttons-grid*/
+.buttons-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1rem;
+}
+.btn {
+	padding: 1.5rem 2.5rem;
+	background-color: var(--calcBtn);
+	border-radius: 2rem;
+	font-size: 2rem;
+}
+
+.blue {
+	background-color: var(--lightBlue);
+}
+.purple {
+	background-color: var(--lightPurple);
+}
+.green {
+	background-color: var(--lightGreen);
+}
