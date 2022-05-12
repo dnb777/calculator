@@ -23,7 +23,10 @@ const operations = {
 		return a * b;
 	},
 	"divide" : function(a, b) {
-		return (a / b).toFixed(2);
+		return Number(Math.round(parseFloat((a / b) + 'e' + 2)) + 'e-' + 2);
+	},
+	"percentage" : function(a, b) {
+		return (a * b) / 100;
 	},
 }
 
@@ -38,7 +41,8 @@ function operate(str) {
 	if(op == '+') return operations.sum(a, b);
 	if(op == '-') return operations.subtract(a, b);
 	if(op == 'x') return operations.multiply(a, b);
-	if(op == '÷') return operations.divide(a, b);
+	if(op == '/') return operations.divide(a, b);
+	if(op == '%') return operations.percentage(a, b);
 }
 
 
