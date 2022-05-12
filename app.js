@@ -1,7 +1,7 @@
 "use strict"
 
 const buttons = document.querySelectorAll('.btn');
-const display = document.querySelector('#result');
+const display = document.querySelector('#display');
 const equal = document.querySelector('#equal');
 const del = document.querySelector('#del');
 const clear = document.querySelector('#clearBtn')
