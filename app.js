@@ -2,7 +2,6 @@
 
 const buttons = document.querySelectorAll('.btn');
 const display = document.querySelector('#result');
-const prevDisplay = document.querySelector('#prev-result')
 const equal = document.querySelector('#equal');
 const del = document.querySelector('#del');
 const clear = document.querySelector('#clearBtn')
@@ -55,13 +54,11 @@ numbers.forEach(number => {
 operators.forEach(operator => {
 	operator.addEventListener('click', (e) => {
 		op = e.target.innerText;
-		display.textContent = '';
+		display.textContent += op;
 		value += e.target.innerText;
-		prevDisplay.textContent = value.split(',').join();
 	})
 })
 
 equal.addEventListener('click', () => {
-	prevDisplay.textContent = '';
 	display.textContent = operate(value);
 })
