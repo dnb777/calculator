@@ -92,7 +92,7 @@ a {
 	border-radius: 2rem;
 	font-size: 2rem;
 }
-#clearBtn {
+.span-two {
 	grid-column: span 2;
 }
 .blue {
