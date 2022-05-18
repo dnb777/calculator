@@ -40,11 +40,11 @@ function operate(op, a, b) {
 	a = Number(a);
 	b = Number(b);
 
-	if(op === "+") return sum(a,b);
-	if(op === "-") return rest(a,b);
-	if(op === "*") return multiply(a,b);
-	if(op === "/") return divide(a,b);
-	if(op === "%") return percentage(a,b);
+	if(op === "+") return currentNumber = sum(a,b);
+	if(op === "-") return currentNumber = rest(a,b);
+	if(op === "x") return currentNumber = multiply(a,b);
+	if(op === "/") return currentNumber = divide(a,b);
+	if(op === "%") return currentNumber = percentage(a,b);
 }
 
 function updateDisplay() {
@@ -78,6 +78,11 @@ function clearAll() {
 	updateDisplay()
 }
 
+function equal() {
+	currentNumber = operate(operation, previousNumber, currentNumber);
+	updateDisplay();
+}
+
 
 numbersBtn.forEach(button => {
 	button.addEventListener('click', () => {
@@ -99,4 +104,8 @@ clearBtn.addEventListener('click', () => {
 
 delBtn.addEventListener('click', () => {
 	deleteLast();
+})
+
+equalBtn.addEventListener('click', () => {
+	equal();
 })
