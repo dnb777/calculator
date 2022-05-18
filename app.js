@@ -3,6 +3,7 @@
 let previousNumber = '';
 let currentNumber = '';
 let operation = '';
+let result = ''
 
 
 const display = document.querySelector("#display");
@@ -51,6 +52,7 @@ function operate(op, a, b) {
 
 // updates the currentNumber variable
 function addNumber(number) {
+	if (typeof currentNumber === "number")return
 	if(number === '.' && currentNumber.includes('.')) return;
 	currentNumber += number;
 }
