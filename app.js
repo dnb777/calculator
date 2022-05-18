@@ -8,11 +8,12 @@ let operation = '';
 const display = document.querySelector("#display");
 const numbersBtn = document.querySelectorAll("[data-number]");
 const operatorsBtn = document.querySelectorAll("[data-operator]");
-const equal = document.querySelector("#equal");
-const del = document.querySelector("#del");
-const clear = document.querySelector("#clear");
+const equalBtn = document.querySelector("#equal");
+const delBtn = document.querySelector("#del");
+const clearBtn = document.querySelector("#clear");
 
 
+// Math operations
 function sum(a, b) {
 	return a + b;
 }
@@ -34,7 +35,10 @@ function percentage(a, b) {
 }
 
 
+
 function operate(op, a, b) {
+	a = Number(a);
+	b = Number(b);
 
 	if(op === "+") return sum(a,b);
 	if(op === "-") return rest(a,b);
@@ -47,24 +51,28 @@ function updateDisplay() {
 	display.textContent = currentNumber;
 }
 
+// updates the currentNumber variable
 function addNumber(number) {
 	if(number === '.' && currentNumber.includes('.')) return;
 	currentNumber += number;
 }
-
+// updates the operation variable and reset the currentNumber, if previousNumber is defined calls operate()
 function chooseOperation(op) {
 	if(currentNumber === '') return;
 	if(previousNumber !== '') {
-		compute();
+		operate(operation, previousNumber, currentNumber);
 	}
-
 	operation = op;
 	previousNumber = currentNumber;
 	currentNumber = '';
 }
 
 
-
+function clearAll() {
+	operation = ''
+	currentNumber = ''
+	updateDisplay()
+}
 
 
 numbersBtn.forEach(button => {
@@ -79,4 +87,8 @@ operatorsBtn.forEach(button => {
 		chooseOperation(button.textContent);
 		updateDisplay();
 	})
+})
+
+clearBtn.addEventListener('click', () => {
+	clearAll();
 })
