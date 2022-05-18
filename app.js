@@ -27,6 +27,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+	if(b === 0) return "AreUdum?";
 	return Number(Math.round(parseFloat((a / b) + 'e' + 2)) + 'e-' + 2);
 }
 
@@ -47,9 +48,6 @@ function operate(op, a, b) {
 	if(op === "%") return currentNumber = percentage(a,b);
 }
 
-function updateDisplay() {
-	display.textContent = currentNumber;
-}
 
 // updates the currentNumber variable
 function addNumber(number) {
@@ -69,20 +67,28 @@ function chooseOperation(op) {
 
 function deleteLast() {
 	currentNumber = currentNumber.slice(0, -1);
-	updateDisplay();
 }
 
 function clearAll() {
-	operation = ''
-	currentNumber = ''
-	updateDisplay()
+	operation = '';
+	previousNumber = ''
+	currentNumber = '';
 }
 
 function equal() {
+	if(currentNumber === '' || operation === '') return;
 	currentNumber = operate(operation, previousNumber, currentNumber);
-	updateDisplay();
+	previousNumber = '';
+	operation = '';
 }
 
+function updateDisplay() {
+	if(previousNumber !== '' && currentNumber === '') {
+		display.textContent = previousNumber + operation;
+	}else {
+		display.textContent = currentNumber;
+	}
+}
 
 numbersBtn.forEach(button => {
 	button.addEventListener('click', () => {
@@ -100,12 +106,15 @@ operatorsBtn.forEach(button => {
 
 clearBtn.addEventListener('click', () => {
 	clearAll();
+	updateDisplay();
 })
 
 delBtn.addEventListener('click', () => {
 	deleteLast();
+	updateDisplay();
 })
 
 equalBtn.addEventListener('click', () => {
 	equal();
+	updateDisplay();
 })
