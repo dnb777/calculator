@@ -67,6 +67,10 @@ function chooseOperation(op) {
 	currentNumber = '';
 }
 
+function deleteLast() {
+	currentNumber = currentNumber.slice(0, -1);
+	updateDisplay();
+}
 
 function clearAll() {
 	operation = ''
@@ -91,4 +95,8 @@ operatorsBtn.forEach(button => {
 
 clearBtn.addEventListener('click', () => {
 	clearAll();
+})
+
+delBtn.addEventListener('click', () => {
+	deleteLast();
 })
