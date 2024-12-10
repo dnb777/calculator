@@ -77,7 +77,10 @@ body {
     flex-direction: column;
     gap: 2px;
 }
-
+.operators>button:last-child{
+    background-color: rgb(253, 106, 53);
+    color: rgb(39, 37, 37);
+}
 .row {
     flex:1;
     display: flex;
