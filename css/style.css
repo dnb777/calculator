@@ -20,6 +20,7 @@ body {
 .btn {
     background-color: rgb(95, 93, 93);
     border: none;
+    border-radius: 3px;
     color: rgb(253, 106, 53);
     padding: 15px 20px;
     text-align: center;
