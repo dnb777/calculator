@@ -39,6 +39,7 @@ body {
     font-weight: 700;
     text-align: end;
     padding: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: end;
