@@ -42,3 +42,10 @@ body {
     justify-content: flex-end;
     align-items: end;
 }
+
+.container {
+    border: 6px solid rgb(43, 39, 39);
+    border-radius: 13px;
+    padding: 10px;
+    box-shadow: 5px 4px 5px -1px rgba(0,0,0,0.75);
+}
