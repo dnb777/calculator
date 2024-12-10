@@ -11,6 +11,7 @@ html {
 body {
     font-family: monospace, sans-serif;
     font-size: 16px;
+    background-color: rgba(47, 114, 47, 0.76);
     height: 100vh;
     display: flex;
     justify-content: center;
