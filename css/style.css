@@ -27,3 +27,17 @@ body {
     font-size: 18px;
     font-weight: 700;
 }
+
+.display {
+    height: 100px;
+    background-color: rgb(95, 93, 93);
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: end;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
