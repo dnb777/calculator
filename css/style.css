@@ -64,10 +64,10 @@ body {
     flex: 1 1 100%;
 }
 .btn-container button:hover {
-    background-color: hsl(0, 7%, 30%);
+    background-color: hsl(0, 1%, 40%);
 }
 .btn-container button:active{
-    background-color: hsl(0, 7%, 50%);;
+    background-color: hsl(0, 1%, 50%);
 }
 .numbers {
     flex: 3;
