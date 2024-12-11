@@ -29,6 +29,7 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .display {
@@ -45,7 +46,7 @@ body {
     justify-content: flex-end;
     align-items: end;
 }
-
+/* EL DISPLAY SE DESBORDA */
 .container {
     width: 350px;
     background-color: rgb(34, 30, 30);
@@ -63,7 +64,10 @@ body {
     flex: 1 1 100%;
 }
 .btn-container button:hover {
-    background-color: rgb(110, 95, 95);
+    background-color: hsl(0, 7%, 30%);
+}
+.btn-container button:active{
+    background-color: hsl(0, 7%, 50%);;
 }
 .numbers {
     flex: 3;
