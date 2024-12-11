@@ -1,5 +1,6 @@
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".btn");
+const clear = document.querySelector("#clear");
 const numbers = ['0','2','1','2','3','4','5','6','7','8','9','.'];
 const operators = ['+','-','x','%'];
 
@@ -11,6 +12,8 @@ let result = "";
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
         const value = e.target.textContent;
+
+        if (value == "C") clearAll();
         
         if (numbers.includes(value)){
             currentValue.push(value);
@@ -37,7 +40,7 @@ const divide = (a, b) => a / b;
 function operate(n1, n2, op){
     let num1 = parseFloat(n1.join(""));
     let num2 = parseFloat(n2.join(""));
-    
+
     switch(op){
         case "+":
             return add(num1, num2);
@@ -56,4 +59,12 @@ function operate(n1, n2, op){
 
 function refreshDisplay(text){
     display.textContent = text;
+}
+
+function clearAll(){
+    currentValue.splice(0);
+    previousValue.splice(0);
+    operator = "";
+    result = "";
+    refreshDisplay();
 }
