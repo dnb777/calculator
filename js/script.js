@@ -2,7 +2,7 @@ const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".btn");
 const clear = document.querySelector("#clear");
 const numbers = ['0','2','1','2','3','4','5','6','7','8','9','.'];
-const operators = ['+','-','x','%'];
+const operators = ['+','-','*','/'];
 
 let currentValue = [];
 let previousValue = [];
@@ -17,6 +17,7 @@ buttons.forEach(button => {
 })
 
 document.addEventListener("keypress", (e) => {
+    console.log(e.code)
     const valueKey = e.key;
     calculate(valueKey);
 })
@@ -56,10 +57,10 @@ function operate(n1, n2, op){
         case "-":
             return subtract(num1, num2);
             break;
-        case "x":
+        case "*":
             return multiply(num1, num2);
             break;
-        case "%":
+        case "/":
             return divide(num1, num2);
             break;
     }
