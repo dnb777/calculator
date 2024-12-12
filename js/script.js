@@ -12,24 +12,32 @@ let result = "";
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
         const value = e.target.textContent;
-
-        if (value == "C") clearAll();
-        
-        if (numbers.includes(value)){
-            currentValue.push(value);
-            display.textContent = previousValue.join("") + operator + currentValue.join("");
-        }else if (operators.includes(value)){
-            previousValue = Array.from(currentValue);
-            currentValue.splice(0);
-            operator = value;
-            display.textContent = previousValue.join("") + operator + currentValue.join("");
-        }else if (value == "="){
-            result = operate(previousValue, currentValue, operator);
-            refreshDisplay(result);
-            currentValue.splice(0, currentValue.length, result);
-        }
+        calculate(value);
     })
 })
+
+document.addEventListener("keypress", (e) => {
+    const valueKey = e.key;
+    calculate(valueKey);
+})
+
+function calculate(value){
+    if (value == "C") clearAll();
+        
+    if (numbers.includes(value)){
+        currentValue.push(value);
+        display.textContent = previousValue.join("") + operator + currentValue.join("");
+    }else if (operators.includes(value)){
+        previousValue = Array.from(currentValue);
+        currentValue.splice(0);
+        operator = value;
+        display.textContent = previousValue.join("") + operator + currentValue.join("");
+    }else if (value == "=" || value == "Enter"){
+        result = operate(previousValue, currentValue, operator);
+        refreshDisplay(result);
+        currentValue.splice(0, currentValue.length, result);
+    }
+}
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
