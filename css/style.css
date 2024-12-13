@@ -47,7 +47,6 @@ body {
     align-items: end;
     overflow: hidden;
 }
-/* EL DISPLAY SE DESBORDA */
 .container {
     width: 350px;
     background-color: rgb(34, 30, 30);
@@ -70,6 +69,16 @@ body {
 .btn-container button:active{
     background-color: hsl(0, 1%, 50%);
 }
+.btn.equal{
+    background-color: rgb(253, 106, 53);
+    color: rgb(39, 37, 37);
+}
+.btn.equal:hover{
+    background-color: hsl(16, 98%, 50%);
+}
+.btn.equal:active{
+    background-color: hsl(16, 98%, 70%);
+}
 .numbers {
     flex: 3;
     display: flex;
@@ -82,10 +91,7 @@ body {
     flex-direction: column;
     gap: 2px;
 }
-.operators>button:last-child{
-    background-color: rgb(253, 106, 53);
-    color: rgb(39, 37, 37);
-}
+
 .row {
     flex:1;
     display: flex;
